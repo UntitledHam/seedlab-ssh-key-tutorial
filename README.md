@@ -99,7 +99,7 @@ Host seedlab
     IdentityFile ~/.ssh/seedlab_key
 ```
 
-Remember to change the ip address to the actual IP address of the server.
+Put your server ip address in the hostname field (do not include the port)
 
 Save the file and now you should be able to run this command to connect to the server
 

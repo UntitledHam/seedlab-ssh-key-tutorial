@@ -1,4 +1,4 @@
-# How to add your SSH key to the server
+# How to add your SSH key to the seedlab server
 
 ## Initial setup (local machine)
 

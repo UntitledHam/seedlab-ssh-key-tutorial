@@ -34,6 +34,8 @@ Now print out the contents of ```seedlab_key.pub``` that is your public key and 
 ```bash
 cat ~/.ssh/seedlab_key.pub
 ```
+![Cat out the key](images/print_out_public_key.png)
+
 
 ## Adding your public key to the server
 
@@ -64,7 +66,7 @@ Now edit the file in your favorite editor and paste in your public key.
 nano ~/.ssh/authorized_keys
 ```
 
-![Add your key](add_your_key.png)
+![Add your key](images/add_your_key.png)
 
 Now save the file and you have added your key to the server.
 
@@ -82,9 +84,9 @@ chmod 600 ~/.ssh/config
 
 Now edit the file in your editor and paste the following in:
 
-```bash
-Host seedhost
-    Hostname <IP>
+```
+Host seedlab
+    Hostname 10.3.28.23
     User seed
     IdentityFile ~/.ssh/seedlab_key
 ```

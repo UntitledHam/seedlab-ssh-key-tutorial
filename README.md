@@ -4,6 +4,8 @@
 
 On your **local machine** first create the ```.ssh``` directory if it does not exist.
 
+### Linux/MacOS
+
 ```bash
 # Create .ssh directory
 mkdir -p ~/.ssh
@@ -47,7 +49,7 @@ cat ~/.ssh/seedlab_key.pub
 Get-Content ~/.ssh/seedlab_key.pub
 ```
 
-![Cat out the key](images/print_out_public_key.png)
+![Print out the key](images/print_out_public_key.png)
 
 ## Adding your public key to the server
 
@@ -62,17 +64,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ```
 
-Now create the ```authorized_keys``` file:
-
-```bash
-# Create the authorized_keys file in ~/.ssh
-touch ~/.ssh/authorized_keys
-
-# Update the permissions
-chmod 600 ~/.ssh/authorized_keys
-```
-
-Now edit the file in your favorite editor and paste in your public key.
+Now create and edit the ```authorized_keys``` file in your favorite editor and paste in your public key.
 
 ```bash
 nano ~/.ssh/authorized_keys
@@ -84,20 +76,8 @@ Now save the file and you have added your key to the server.
 
 ## Editing your SSH config to use your key
 
-Now go back to your own **local machine** and create a ssh config if it does not already.
+Now go back to your own **local machine** and edit the ```~/.ssh/config``` file.
 
-### Linux/MacOS:
-```bash
-# Create the ssh config file
-touch ~/.ssh/config
-```
-
-### Windows:
-```powershell
-New-Item ~/.ssh/config
-```
-
-Now edit the file in your editor
 
 ### Linux/MacOS
 
@@ -106,19 +86,20 @@ nano ~/.ssh/config
 ```
 
 ### Windows
-
 ```powershell
 notepad ~/.ssh/config
 ```
 
-And now paste the following in:
+Now paste the following in:
 
 ```
 Host seedlab
-    Hostname 10.3.28.23
+    Hostname <The IP of the server>
     User seed
     IdentityFile ~/.ssh/seedlab_key
 ```
+
+Remember to change the ip address to the actual IP address of the server.
 
 Save the file and now you should be able to run this command to connect to the server
 

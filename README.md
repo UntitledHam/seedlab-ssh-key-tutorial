@@ -67,6 +67,9 @@ Now create the ```authorized_keys``` file:
 ```bash
 # Create the authorized_keys file in ~/.ssh
 touch ~/.ssh/authorized_keys
+
+# Update the permissions
+chmod 600 ~/.ssh/authorized_keys
 ```
 
 Now edit the file in your favorite editor and paste in your public key.
